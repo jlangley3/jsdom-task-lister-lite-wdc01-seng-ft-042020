@@ -89,12 +89,14 @@ function editSubmit(event) {
 }
 
 function handleDone(event) {
-    if (event.target.classList.contains("done")) {
-        event.target.classname = "";
-        event.target.style.textDecoration = "none"
-    } else {
+    if (event.target.classname === undefined || event.target.classname === 'none') {
+        event.target.style.color = "dark-grey";
         event.target.style.textDecoration = "line-through";
         event.target.classname = "done";
+    } else {
+        event.target.style.color = 'black';
+        event.target.style.textDecoration = "";
+        event.target.classname = "none";   
     }
 
 
